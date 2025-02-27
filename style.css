@@ -1,0 +1,100 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+   
+}
+
+#main{ 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+}
+
+.Sun{
+    height: 99px;
+    width: 99px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: rgb(250, 144, 87);
+    box-shadow: 0 0 420px rgb(255, 162, 2);
+    z-index: 10;
+}
+
+.suname{
+    height: 30px;
+    width: 50px;
+    position: absolute;
+    z-index: 8;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    text-decoration-color: aqua;
+
+}
+
+
+
+.Earth{
+    width: 35px;
+    height: 35px;
+    position: relative;
+    border-radius: 50%;
+    background: url('Earth001.jpg');
+    border: none;
+    background-size: cover;
+    animation:  Earth-orbit 17s linear infinite;
+
+}
+
+.Earth::after{
+    content: "";
+    width: 25px;
+    height: 25px; 
+    border-radius: 50%;
+    position: absolute;
+    background: url('fullmoon001.webp');
+    border: none;
+    background-size: cover;
+    animation: moon-orbit 4.7s linear infinite;
+}
+
+@keyframes Earth-orbit{
+
+    from{
+        
+        transform: rotate(0deg) translateX(600px) rotate(0deg);
+  }
+
+   to{
+
+        transform: rotate(360deg) translateX(610px) rotate(-360deg);
+   }
+
+}  
+
+@keyframes moon-orbit{
+
+    from{
+        
+        transform: rotate(0deg) translateX(100px) rotate(0deg);
+  }
+
+   to{
+
+        transform: rotate(360deg) translateX(100px) rotate(-360deg);
+   }
+
+}  
+
+.Sun:hover{
+        z-index: 0;
+
+}
